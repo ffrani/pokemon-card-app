@@ -47,11 +47,11 @@ const handleRemoveCard = card => {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  height: 340px; 
+  height: 360px; 
   overflow-y: auto;
   border: solid 3px rgb(57,107,186);
   border-radius: 10px;
-  /* min-width: 900px; */
+  min-width: 750px;
 }
 
 .card-item {
