@@ -42,8 +42,8 @@ const onAddCard = result => {
 }
 
 .title-image-resultater {
-  width: 200px;
-  height: 50px;
+  width: 150px;
+  height: 35px;
   margin-right: 5px;
   margin-top: 20px;
 }
@@ -58,14 +58,14 @@ const onAddCard = result => {
   justify-content: center;
   height: 300px;
   overflow-y: auto;
-  border: solid 1px rgb(57,107,186);
+  border: solid 3px rgb(57,107,186);
   border-radius: 10px;
   min-width: 600px;
 }
 
 .search-results .card {
   background-color: #ffff;
-  border: 1px solid rgb(57,107,186);
+  border: 5px solid rgb(57,107,186);
   border-radius: 15px;
   padding: 15px;
   width: 150px;

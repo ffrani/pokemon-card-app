@@ -37,8 +37,8 @@ const handleRemoveCard = card => {
 <style>
 
 .title-image-pokedex {
-  width: 200px;
-  height: 50px;
+  width: 150px;
+  height: 35px;
   margin-right: 5px;
   margin-top: 20px;
 }
@@ -46,17 +46,17 @@ const handleRemoveCard = card => {
 .card-list-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   height: 340px; 
   overflow-y: auto;
-  border: solid 1px rgb(57,107,186);
+  border: solid 3px rgb(57,107,186);
   border-radius: 10px;
-  min-width: 800px;
+  /* min-width: 900px; */
 }
 
 .card-item {
   background-color: #ffff;
-  border: 1px solid rgb(57,107,186);
+  border: 5px solid rgb(57,107,186);
   border-radius: 15px;
   padding-top: 15px;
   width: 200px;
@@ -126,6 +126,9 @@ const handleRemoveCard = card => {
 }
 
 .card-list-container ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
   list-style-type: none;
   padding: 0;
   margin: 0;
