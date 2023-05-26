@@ -181,7 +181,8 @@ const showSuggestions = computed(() => {
 <style>
 html,
 body {
-  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -192,25 +193,25 @@ body {
 }
 
 .title {
-  width: 100%; /* Adjust the width as needed */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .title img {
-  width: 500px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 500px;
+  height: auto;
 }
 
 .search-bar {
   position: relative;
-  max-width: 500px; /* Adjust the value as needed */
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .search-container {

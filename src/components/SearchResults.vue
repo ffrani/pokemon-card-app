@@ -42,21 +42,22 @@ const onAddCard = result => {
 }
 
 .title-image-resultater {
-  width: 200px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
+  width: 200px;
+  height: 50px;
   margin-right: 5px;
+  margin-top: 20px;
 }
 
 .title span {
-  font-size: 20px; /* Adjust the font size as needed */
+  font-size: 20px;
 }
 
 .search-results {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 300px; /* Set a fixed height for the container */
-  overflow-y: auto; /* Add scrollbars when the content exceeds the container height */
+  height: 300px;
+  overflow-y: auto;
   border: solid 1px rgb(57,107,186);
   border-radius: 10px;
   min-width: 600px;
@@ -104,8 +105,8 @@ const onAddCard = result => {
 }
 
 .search-results ul {
-  list-style-type: none; /* Remove the default marker */
-  padding: 0; /* Remove any default padding */
-  margin: 0; /* Remove any default margin */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 </style>
