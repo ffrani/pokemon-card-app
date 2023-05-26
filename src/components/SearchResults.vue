@@ -1,0 +1,111 @@
+<template>
+  <div>
+    <div class="title-resultater">
+    <img src="../assets/resultaterpng.png" alt="Resultater" class="title-image-resultater">
+    </div>
+    <div class="search-results radio-container">
+      <ul>
+        <li v-for="result in results" :key="result.id">
+          <div class="card">
+            <h1>{{ result.name }}</h1>
+            <img :src="result.image" :alt="result.name" class="card-image" />
+            <button @click="onAddCard(result)" class="card-button">
+              Legg til
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { inject, defineProps } from 'vue';
+
+defineProps(['results']);
+
+const addCard = inject('addCard');
+
+const onAddCard = result => {
+  if (addCard) {
+    addCard(result);
+  }
+};
+</script>
+
+<style>
+
+.title-resultater {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title-image-resultater {
+  width: 200px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin-right: 5px;
+}
+
+.title span {
+  font-size: 20px; /* Adjust the font size as needed */
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 300px; /* Set a fixed height for the container */
+  overflow-y: auto; /* Add scrollbars when the content exceeds the container height */
+  border: solid 1px rgb(57,107,186);
+  border-radius: 10px;
+  min-width: 600px;
+}
+
+.search-results .card {
+  background-color: #ffff;
+  border: 1px solid rgb(57,107,186);
+  border-radius: 15px;
+  padding: 15px;
+  width: 150px;
+  margin-top: 10px;
+
+  text-align: center;
+}
+
+.search-results h1 {
+  font-size: 15px;
+}
+
+.search-results .card p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.search-results .card .card-image {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.search-results .card .card-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.search-results .card .card-button:hover {
+  background-color: #45a049;
+}
+
+.search-results ul {
+  list-style-type: none; /* Remove the default marker */
+  padding: 0; /* Remove any default padding */
+  margin: 0; /* Remove any default margin */
+}
+</style>
