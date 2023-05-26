@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-  <img src="./assets/Pokemon-Kort (2).png" border="0" alt="Pokemon Image">
+  <img src="./assets/Pokemon-Kort.png" border="0" alt="Pokemon Image">
 </div>
   <div class="app">
     <div class="search-bar">
