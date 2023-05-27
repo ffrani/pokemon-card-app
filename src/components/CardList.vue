@@ -51,7 +51,7 @@ const handleRemoveCard = card => {
   overflow-y: auto;
   border: solid 3px rgb(57,107,186);
   border-radius: 10px;
-  min-width: 750px;
+  min-width: 730px;
 }
 
 .card-item {
