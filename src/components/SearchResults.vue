@@ -3,7 +3,7 @@
     <div class="title-resultater">
     <img src="../assets/resultaterpng.png" alt="Resultater" class="title-image-resultater">
     </div>
-    <div class="search-results radio-container">
+    <div class="search-results">
       <ul>
         <li v-for="result in results" :key="result.id">
           <div class="card">

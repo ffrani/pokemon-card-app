@@ -87,7 +87,6 @@ const searchCards = async () => {
 
     searchResults.value = capitalizedResults;
 
-    // Clear search query
     searchQuery.value = '';
   } catch (error) {
     console.error(error);
@@ -149,18 +148,17 @@ const selectSuggestion = async suggestion => {
   }
 };
 
-const addCard = () => {
-  if (selectedPokemon.value) {
-    const existingCard = cardList.value.find(
-      c => c.id === selectedPokemon.value.id
-    );
+const addCard = (pokemon) => {
+  if (pokemon) {
+    const existingCard = cardList.value.find(c => c.id === pokemon.id);
     if (!existingCard) {
-      cardList.value.push(selectedPokemon.value);
+      cardList.value.push(pokemon);
       selectedPokemon.value = null;
       searchQuery.value = '';
     }
   }
 };
+
 
 const removeCard = card => {
   const index = cardList.value.findIndex(c => c.id === card.id);
