@@ -8,7 +8,7 @@
         <div class="search-container">
           <input
             @input="fetchSuggestions"
-            @keydown.enter="searchCards"
+            @keydown.enter="searchCardsOnEnter"
             class="search-input"
             type="text"
             v-model="searchQuery"
@@ -57,7 +57,6 @@ const fullList = ref([]);
 const selectedPokemon = ref(null);
 
 const searchCards = async () => {
-  // Check if search query is empty
   if (searchQuery.value.trim() === '') {
     return;
   }
@@ -95,6 +94,12 @@ const searchCards = async () => {
   }
 };
 
+const searchCardsOnEnter = (event) => {
+  if (event.key === 'Enter') {
+    searchCards();
+  }
+};
+
 const fetchSuggestions = async () => {
   if (searchQuery.value.length > 0) {
     try {
@@ -121,7 +126,7 @@ const fetchSuggestions = async () => {
 
 const selectSuggestion = async suggestion => {
   searchQuery.value = suggestion.name;
-  suggestions.value = []; // Clear suggestions
+  suggestions.value = [];
 
   try {
     const response = await fetch(suggestion.url);
