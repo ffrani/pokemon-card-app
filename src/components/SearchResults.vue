@@ -42,10 +42,10 @@ const onAddCard = result => {
 }
 
 .title-image-resultater {
-  width: 150px;
+  width: 125px;
   height: 35px;
   margin-right: 5px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .title span {

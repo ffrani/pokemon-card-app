@@ -205,7 +205,7 @@ body {
 .title img {
   width: 450px;
   height: auto;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .search-bar {
