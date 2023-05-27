@@ -222,8 +222,10 @@ body {
   display: flex;
   align-items: center;
   background-color: #ffff;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 6px;
+  border: solid 3px rgb(57,107,186);
+
 }
 
 .search-input {

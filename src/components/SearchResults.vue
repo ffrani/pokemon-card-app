@@ -4,7 +4,7 @@
     <img src="../assets/resultaterpng.png" alt="Resultater" class="title-image-resultater">
     </div>
     <div class="search-results">
-      <ul>
+      <ul :class="{'single-card': results.length === 1}">
         <li v-for="result in results" :key="result.id">
           <div class="card">
             <h1>{{ result.name }}</h1>
@@ -54,7 +54,7 @@ const onAddCard = result => {
 
 .search-results {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   height: 300px;
   overflow-y: auto;
@@ -72,6 +72,24 @@ const onAddCard = result => {
   margin-top: 10px;
 
   text-align: center;
+}
+
+.search-results ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results ul.single-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-results ul:not(.single-card) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
 .search-results h1 {
@@ -104,9 +122,4 @@ const onAddCard = result => {
   background-color: #45a049;
 }
 
-.search-results ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
 </style>
