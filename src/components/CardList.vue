@@ -13,7 +13,7 @@
           <p v-if="!card.isEditing">Høyde: {{ card.height }}m</p>
           <p v-if="!card.isEditing">Vekt: {{ card.weight }}kg</p>
           <div v-if="card.isEditing">
-            <input class="edit-input" v-model="card.editName" type="text" placeholder="Card Name" />
+            <input class="edit-input" v-model="card.editName" type="text" placeholder="Kort Navn" />
             <input class="edit-input" v-model="card.editFerdigheter" type="text" placeholder="Ferdigheter" />
             <input class="edit-input" v-model="card.editHoyde" type="text" placeholder="Høyde" />
             <input class="edit-input" v-model="card.editVekt" type="text" placeholder="Vekt" />

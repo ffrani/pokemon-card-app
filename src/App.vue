@@ -178,10 +178,10 @@ const removeCard = card => {
 
 const editCard = card => {
   card.isEditing = true;
-  card.editName = card.name;
-  card.editFerdigheter = card.abilities.join(', ');
-  card.editHoyde = card.height;
-  card.editVekt = card.weight;
+  card.editName = '';
+  card.editFerdigheter = '';
+  card.editHoyde = '';
+  card.editVekt = '';
 };
 
 provide('addCard', addCard);
