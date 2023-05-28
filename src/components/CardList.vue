@@ -141,7 +141,8 @@ const saveChanges = (card) => {
   border: solid 1px rgb(57,107,186);
   border-radius: 10px;
   margin-bottom: 5px;
-  padding: 2px 10px;
+  padding: 5px 5px;
+  background-color: #ffff;
 }
 
 .button-lagre {
@@ -153,7 +154,7 @@ const saveChanges = (card) => {
   /* margin-bottom: 10px; */
   font-size: 14px;
   cursor: pointer;
-  margin-top: 12px;
+  margin-top: 20px;
 }
 
 .button-lagre:hover {

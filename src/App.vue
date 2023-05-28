@@ -158,11 +158,12 @@ const selectSuggestion = async suggestion => {
   }
 };
 
-const addCard = pokemon => {
+const addCard = (pokemon) => {
   if (pokemon) {
-    const existingCard = cardList.value.find(c => c.id === pokemon.id);
+    const existingCard = cardList.value.find((c) => c.id === pokemon.id);
     if (!existingCard) {
       cardList.value.push(pokemon);
+      searchResults.value = searchResults.value.filter((result) => result.id !== pokemon.id);
       selectedPokemon.value = null;
       searchQuery.value = '';
     }
