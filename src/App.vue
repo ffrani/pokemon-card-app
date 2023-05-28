@@ -1,7 +1,7 @@
 <template>
   <div class="title">
-  <img src="./assets/Pokemon-Kort.png" border="0" alt="Pokemon Image">
-</div>
+    <img src="./assets/Pokemon-Kort.png" border="0" alt="Pokemon Image">
+  </div>
   <div class="app">
     <div class="search-bar">
       <div class="search-container-wrapper">
@@ -12,7 +12,7 @@
             class="search-input"
             type="text"
             v-model="searchQuery"
-            placeholder="Søk etter kort"
+            placeholder="Søk kort"
           />
           <button class="search-button" @click="searchCards">
             <i class="search-icon fas fa-search"></i>
@@ -83,6 +83,11 @@ const searchCards = async () => {
       height: pokemon.height / 10,
       weight: pokemon.weight / 10,
       abilities: pokemon.abilities.map(ability => ability.ability.name),
+      isEditing: false,
+      editName: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
+      editFerdigheter: '',
+      editHoyde: '',
+      editVekt: '',
     }));
 
     searchResults.value = capitalizedResults;
@@ -140,6 +145,11 @@ const selectSuggestion = async suggestion => {
       height: pokemon.height / 10,
       weight: pokemon.weight / 10,
       abilities: pokemon.abilities.map(ability => ability.ability.name),
+      isEditing: false,
+      editName: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
+      editFerdigheter: '',
+      editHoyde: '',
+      editVekt: '',
     };
 
     selectedPokemon.value = capitalizedPokemon;
@@ -148,7 +158,7 @@ const selectSuggestion = async suggestion => {
   }
 };
 
-const addCard = (pokemon) => {
+const addCard = pokemon => {
   if (pokemon) {
     const existingCard = cardList.value.find(c => c.id === pokemon.id);
     if (!existingCard) {
@@ -159,7 +169,6 @@ const addCard = (pokemon) => {
   }
 };
 
-
 const removeCard = card => {
   const index = cardList.value.findIndex(c => c.id === card.id);
   if (index !== -1) {
@@ -169,6 +178,10 @@ const removeCard = card => {
 
 const editCard = card => {
   card.isEditing = true;
+  card.editName = card.name;
+  card.editFerdigheter = card.abilities.join(', ');
+  card.editHoyde = card.height;
+  card.editVekt = card.weight;
 };
 
 provide('addCard', addCard);
